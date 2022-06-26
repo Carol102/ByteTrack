@@ -1,0 +1,30 @@
+2022-06-25 23:31:44.268 | INFO     | __main__:main:326 - Args: Namespace(aspect_ratio_thresh=1.6, camid=0, ckpt='pretrained/bytetrack_x_mot17.pth.tar', conf=None, demo='video', device=device(type='cpu'), exp_file='exps/example/mot/yolox_x_mix_det.py', experiment_name='yolox_x_mix_det', fp16=True, fps=30, fuse=True, match_thresh=0.8, min_box_area=10, mot20=False, name=None, nms=None, path='./ByteTrack/videos/palace.mov', save_result=True, track_buffer=30, track_thresh=0.5, trt=False, tsize=None)
+Namespace(aspect_ratio_thresh=1.6, camid=0, ckpt='pretrained/bytetrack_x_mot17.pth.tar', conf=None, demo='video', device='cpu', exp_file='exps/example/mot/yolox_x_mix_det.py', experiment_name=None, fp16=True, fps=30, fuse=True, match_thresh=0.8, min_box_area=10, mot20=False, name=None, nms=None, path='./ByteTrack/videos/palace.mov', save_result=True, track_buffer=30, track_thresh=0.5, trt=False, tsize=None)
+Traceback (most recent call last):
+  File "tools/demo_track.py", line 383, in <module>
+    main(exp, args)
+  File "tools/demo_track.py", line 335, in main
+    model = exp.get_model().to(args.device)
+  File "/Volumes/MAC_SAMSUNG_DATA/MTA/TTCNTT-THUYTT/ByteTrack/yolox/exp/yolox_base.py", line 73, in get_model
+    backbone = YOLOPAFPN(self.depth, self.width, in_channels=in_channels)
+  File "/Volumes/MAC_SAMSUNG_DATA/MTA/TTCNTT-THUYTT/ByteTrack/yolox/models/yolo_pafpn.py", line 27, in __init__
+    self.backbone = CSPDarknet(depth, width, depthwise=depthwise, act=act)
+  File "/Volumes/MAC_SAMSUNG_DATA/MTA/TTCNTT-THUYTT/ByteTrack/yolox/models/darknet.py", line 163, in __init__
+    act=act,
+  File "/Volumes/MAC_SAMSUNG_DATA/MTA/TTCNTT-THUYTT/ByteTrack/yolox/models/network_blocks.py", line 176, in __init__
+    for _ in range(n)
+  File "/Volumes/MAC_SAMSUNG_DATA/MTA/TTCNTT-THUYTT/ByteTrack/yolox/models/network_blocks.py", line 176, in <listcomp>
+    for _ in range(n)
+  File "/Volumes/MAC_SAMSUNG_DATA/MTA/TTCNTT-THUYTT/ByteTrack/yolox/models/network_blocks.py", line 94, in __init__
+    self.conv2 = Conv(hidden_channels, out_channels, 3, stride=1, act=act)
+  File "/Volumes/MAC_SAMSUNG_DATA/MTA/TTCNTT-THUYTT/ByteTrack/yolox/models/network_blocks.py", line 45, in __init__
+    bias=bias,
+  File "/Volumes/MAC_SAMSUNG_DATA/MTA/TTCNTT-THUYTT/venv/lib/python3.6/site-packages/torch/nn/modules/conv.py", line 435, in __init__
+    False, _pair(0), groups, bias, padding_mode, **factory_kwargs)
+  File "/Volumes/MAC_SAMSUNG_DATA/MTA/TTCNTT-THUYTT/venv/lib/python3.6/site-packages/torch/nn/modules/conv.py", line 138, in __init__
+    self.reset_parameters()
+  File "/Volumes/MAC_SAMSUNG_DATA/MTA/TTCNTT-THUYTT/venv/lib/python3.6/site-packages/torch/nn/modules/conv.py", line 144, in reset_parameters
+    init.kaiming_uniform_(self.weight, a=math.sqrt(5))
+  File "/Volumes/MAC_SAMSUNG_DATA/MTA/TTCNTT-THUYTT/venv/lib/python3.6/site-packages/torch/nn/init.py", line 395, in kaiming_uniform_
+    return tensor.uniform_(-bound, bound)
+KeyboardInterrupt
