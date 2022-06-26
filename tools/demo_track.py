@@ -18,7 +18,7 @@ from yolox.tracking_utils.timer import Timer
 IMAGE_EXT = [".jpg", ".jpeg", ".webp", ".bmp", ".png"]
 
 
-def make_parser(demo,path,exp_file,ckpt):
+def make_parser(demo="video",path="",exp_file="",ckpt=""):
     parser = argparse.ArgumentParser("ByteTrack Demo!")
     parser.add_argument(
         "demo", default=demo, help="demo type, eg. image, video and webcam"
