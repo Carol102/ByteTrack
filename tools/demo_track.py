@@ -49,7 +49,7 @@ def make_parser(demo="video",path="",exp_file="",ckpt=""):
     parser.add_argument("-c", "--ckpt", default=ckpt, type=str, help="ckpt for eval")
     parser.add_argument(
         "--device",
-        default="cpu",
+        default="gpu",
         type=str,
         help="device to run our model, can either be cpu or gpu",
     )
